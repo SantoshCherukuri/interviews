@@ -1,0 +1,129 @@
+
+
+
+A Transport aggregator service offers three types of passes. 1D, 7D, 30D. Passes are valid for continuous duration,
+no matter if we travel or not. If I have pre-decided the days of the year on which I want to
+visit the office, then calculate the minimum amount using which I can go on all these days.
+
+Input: days = [1,4,6,7,8,20],
+ costs = [2,7,15]
+ 
+ 
+Output: 11(2 + 7 + 2)
+
+
+1D - 1days 
+7D - if days are 4 or more but less <= 7
+30D - 
+
+
+
+_________
+
+You are given an array arr[] of N integers including 0. The task is to find the smallest positive number missing from the array.
+Example 1:
+Input:
+N = 5
+arr[] = {1,2,3,4,5}
+Output: 6
+Explanation: Smallest positive missing 
+number is 6.
+Example 2:
+Input:
+N = 5
+arr[] = {0,-10,1,2,4}
+Output: 2
+Explanation: Smallest positive missing 
+number is 2.
+
+
+min = ?
+res = min + 1
+
+
+sort and find min 
+
+__________________________
+
+
+Table: Seat
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+id is the primary key column for this table.
+Each row of this table indicates the name and the ID of a student.
+id is a continuous increment.
+ 
+Write an SQL query to swap the seat id of every two consecutive students. If the number of students is odd, the id of the last student is not swapped.
+Return the result table ordered by id in ascending order.
+The query result format is in the following example.
+ 
+Example 1:
+Input: 
+Seat table:
++----+---------+
+| id | student |
++----+---------+
+| 1  | Abbot   |
+| 2  | Doris   |
+| 3  | Emerson |
+| 4  | Green   |
+| 5  | Jeames  |
++----+---------+
+
+Output: 
++----+---------+
+| id | student |
++----+---------+
+| 1  | Doris   |
+| 2  | Abbot   |
+| 3  | Green   |
+| 4  | Emerson |
+| 5  | Jeames  |
++----+---------+
+
+select l.id, (case when (r.id_1 is null) then l.student else r.student end) as student_1 from seat_table as l left outer join (
+select case when (id % 2 == 0) then (id - 1) else id + 1 end as id_1, student from seat_table 
+) as r on l.id = r.id_1; 
+
+
+For word count how many task, jobs and stages will generated?
+-num_executors 5 --executor-cores 5 
+jobs: 1
+
+read file 
+map and split(tuple(" ")).flatmap().groupBy().reduce()
+
+
+learn: salting logic to handle skew data
+
+
+
+
+key
+1
+1
+1
+1
+1
+1
+1
+1
+1
+
+2
+2
+2
+
+3
+3
+
+
+
+
+
+
+
